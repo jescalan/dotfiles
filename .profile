@@ -2,6 +2,7 @@
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
 eval "$(hub alias -s)"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # prompt
 emojis=('🚀' '🎯' '🎾' '🤖' '👽' '👻' '👀' '💍' '🐔' '🐙' '🐤' '🐬' '🐠' '🍁' '✨' '💥' '🍉' '🍕' '🍪' '🍭' '🍺' '⛵️' '💸' '🔑')
@@ -30,6 +31,16 @@ alias ri="git rebase -i"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias branch="git branch"
 alias amend="git commit --amend -m"
+fixup() {
+  local OC=`git rev-parse HEAD`
+  git add -A
+  git commit --fixup=$OC
+  git rebase -i --autosquash $OC~1
+}
+
+# node
+alias reload-deps="rm -rf node_modules && npm i"
 
 # autocomplete
 __git_complete co _git_checkout
+__git_complete push _git_push
