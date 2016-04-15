@@ -2,7 +2,6 @@
 source ~/.git-completion.sh
 source ~/.git-prompt.sh
 eval "$(hub alias -s)"
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # prompt
 emojis=('🚀' '🎯' '🎾' '🤖' '👽' '👻' '👀' '💍' '🐔' '🐙' '🐤' '🐬' '🐠' '🍁' '✨' '💥' '🍉' '🍕' '🍪' '🍭' '🍺' '⛵️' '💸' '🔑')
@@ -44,3 +43,6 @@ alias reload-deps="rm -rf node_modules && npm i"
 # autocomplete
 __git_complete co _git_checkout
 __git_complete push _git_push
+
+# iterm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
