@@ -6,6 +6,7 @@ My dotfiles. Simple, clean, and not forked from anyone else's bulky repos. Mostl
 
 - Clone this repo down into whatever folder you store your projects in
 - Make sure you have [hub](https://github.com/github/hub) installed, via `brew install hub`
+- If you already have your own config files, you can back them up with `make backup`. This will rename them and put `.bak` at the end
 - Run `make install`
 
 ### Updating
@@ -13,6 +14,7 @@ My dotfiles. Simple, clean, and not forked from anyone else's bulky repos. Mostl
 - Go back into this project
 - Run `git pull`
 - Run `reload`
+- You're up to date
 
 ### Troubleshooting
 
