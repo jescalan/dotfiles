@@ -2,11 +2,21 @@ backup:
 	if [ -f ~/.profile ]; then mv ~/.profile ~/.profile.bak; fi
 	if [ -f ~/.bash_profile ]; then mv ~/.bash_profile ~/.bash_profile.bak; fi
 	if [ -f ~/.bashrc ]; then mv ~/.bashrc ~/.bashrc.bak; fi
-	if [ -f ~/.git-completion.sh ]; then mv ~/.git-completion.sh ~/.git-completion.bak; fi
-	if [ -f ~/.git-prompt.sh ]; then mv ~/.git-prompt.sh ~/.git-prompt.bak; fi
+	if [ -f ~/.git-completion.sh ]; then mv ~/.git-completion.sh ~/.git-completion.sh.bak; fi
+	if [ -f ~/.git-prompt.sh ]; then mv ~/.git-prompt.sh ~/.git-prompt.sh.bak; fi
 	if [ -f ~/.hushlogin ]; then mv ~/.hushlogin ~/.hushlogin.bak; fi
 	if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc.bak; fi
 	if [ -f ~/.vim ]; then mv ~/.vim ~/.vim.bak; fi
+
+remove_backup:
+	if [ -f ~/.profile.bak ]; then rm ~/.profile.bak; fi
+	if [ -f ~/.bash_profile.bak ]; then rm ~/.bash_profile.bak; fi
+	if [ -f ~/.bashrc.bak ]; then rm ~/.bashrc.bak; fi
+	if [ -f ~/.git-completion.sh.bak ]; then rm completion.sh ~/.git-completion.sh.bak; fi
+	if [ -f ~/.git-prompt.sh.bak ]; then rm prompt.sh ~/.git-prompt.sh.bak; fi
+	if [ -f ~/.hushlogin.bak ]; then rm ~/.hushlogin.bak; fi
+	if [ -f ~/.vimrc.bak ]; then rm ~/.vimrc.bak; fi
+	if [ -f ~/.vim.bak ]; then rm ~/.vim.bak; fi
 
 install:
 	ln -s `pwd`/.profile ~/.profile
