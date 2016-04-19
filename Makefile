@@ -1,9 +1,9 @@
 backup:
 	if [ -f ~/.profile ]; then mv ~/.profile ~/.profile.bak; fi
-	if [ -f ~/.bas_profile ]; then mv ~/.bas_profile ~/.bas_profile.bak; fi
+	if [ -f ~/.bash_profile ]; then mv ~/.bash_profile ~/.bash_profile.bak; fi
 	if [ -f ~/.bashrc ]; then mv ~/.bashrc ~/.bashrc.bak; fi
-	if [ -f ~/.git-completion ]; then mv ~/.git-completion ~/.git-completion.bak; fi
-	if [ -f ~/.git-prompt ]; then mv ~/.git-prompt ~/.git-prompt.bak; fi
+	if [ -f ~/.git-completion.sh ]; then mv ~/.git-completion.sh ~/.git-completion.bak; fi
+	if [ -f ~/.git-prompt.sh ]; then mv ~/.git-prompt.sh ~/.git-prompt.bak; fi
 	if [ -f ~/.hushlogin ]; then mv ~/.hushlogin ~/.hushlogin.bak; fi
 	if [ -f ~/.vimrc ]; then mv ~/.vimrc ~/.vimrc.bak; fi
 	if [ -f ~/.vim ]; then mv ~/.vim ~/.vim.bak; fi
