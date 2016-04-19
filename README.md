@@ -2,7 +2,7 @@
 
 My dotfiles. Simple, clean, and not forked from anyone else's bulky repos. Mostly git aliases and utilities and a nice prompt. Used with pure bash, because it's the default on all unix machines.
 
-![screenshot](https://io_infinit_links.storage.googleapis.com/5716a3fcb522a5094b4ae9a9/Screen%20Shot%202016-04-19%20at%205.32.20%20PM.png?Signature=CjhljeBHg30vXNLEUQn6qF8BMWtu74Y5StjxS%2FpgFesunrxQxhCwgyvW8n%2BTxNmI1uIsP4XkoDUke3j3Jfm4yYd%2FY140wtJvklNNMDrw467hbahK5CtLFeQMpdzZBedbSUhD8vYagwmPfb9PqRbgTCpUfO45XNGoNih%2F8%2Fm8vuE%3D&GoogleAccessId=798530033299-s9b7qmrc99trk8uid53giuvus1o74cif%40developer.gserviceaccount.com&Expires=1461187969)
+![screenshot](http://files.jenius.im/_/DewZ8py.png)
 
 ### Installation
 
