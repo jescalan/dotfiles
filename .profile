@@ -30,16 +30,22 @@ alias ri="git rebase -i"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias branch="git branch"
 alias amend="git commit --amend -m"
+
+# squashes the current changes into the previous commit
 fixup() {
   local OC=`git rev-parse HEAD`
   git add -A
   git commit --fixup=$OC
   git rebase -i --autosquash $OC~1
 }
+
+# pushes the branch you are on and opens compare on github for a PR
 pushpr() {
   git push -u origin `git rev-parse --abbrev-ref HEAD`
   git compare
 }
+
+# to be run after `npm version`, pushes tags, publishes, and opens release notes
 publish(){
   push && push --tags && npm publish .
   echo `git config --get remote.origin.url` | sed -e
