@@ -4,7 +4,7 @@ source ~/.git-prompt.sh
 eval "$(hub alias -s)"
 
 # prompt
-emojis=('🚀' '🎯' '🎾' '🤖' '👽' '👻' '👀' '💍' '🐔' '🐙' '🐤' '🐬' '🐠' '🍁' '✨' '💥' '🍉' '🍕' '🍪' '🍭' '🍺' '⛵️' '💸' '🔑')
+emojis=('🚀' '🎯' '🎾' '🤖' '👽' '👻' '👀' '💍' '🐔' '🐙' '🐤' '🐠' '🍁' '✨' '💥' '🍉' '🍕' '🍪' '🍭' '🍺' '⛵️' '💸' '🔑')
 icon=${emojis[$RANDOM % ${#emojis[@]} ]}
 PS1='${icon}  \[\e[0;31m\]${PWD##*/}\[\e[m\]$(__git_ps1 "@\[\e[0;33m\]%s\[\e[m\]") '
 
@@ -36,6 +36,15 @@ fixup() {
   git commit --fixup=$OC
   git rebase -i --autosquash $OC~1
 }
+pushpr() {
+  git push -u origin `git rev-parse --abbrev-ref HEAD`
+  git compare
+}
+publish(){
+  push && push --tags && npm publish .
+  echo `git config --get remote.origin.url` | sed -e
+  's/\.git/\/releases/g' | echo "`cat -`/new?tag=`git describe`" | xargs open
+}
 
 # node
 alias reload-deps="rm -rf node_modules && npm i"
@@ -46,3 +55,7 @@ __git_complete push _git_push
 
 # iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# postgres
+export PGDATA='/usr/local/var/postgres'
+export PGHOST=localhost
