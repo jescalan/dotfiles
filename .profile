@@ -48,8 +48,7 @@ pushpr() {
 # to be run after `npm version`, pushes tags, publishes, and opens release notes
 publish(){
   push && push --tags && npm publish .
-  echo `git config --get remote.origin.url` | sed -e
-  's/\.git/\/releases/g' | echo "`cat -`/new?tag=`git describe`" | xargs open
+  echo `git config --get remote.origin.url` | sed -e 's/\.git/\/releases/g' | echo "`cat -`/new?tag=`git describe`" | xargs open
 }
 
 # node
