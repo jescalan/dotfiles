@@ -45,6 +45,11 @@ pushpr() {
   git compare
 }
 
+pullpr() {
+  git fetch origin pull/$1/head:pr-$1
+  git checkout pr-$1
+}
+
 # to be run after `npm version`, pushes tags, publishes, and opens release notes
 publish(){
   push && push --tags && npm publish .
