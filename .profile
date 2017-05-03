@@ -30,6 +30,7 @@ alias ri="git rebase -i"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias branch="git branch"
 alias amend="git commit --amend -m"
+alias gh="hub browse"
 
 # squashes the current changes into the previous commit
 fixup() {
@@ -69,3 +70,7 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 # postgres
 export PGDATA='/usr/local/var/postgres'
 export PGHOST=localhost
+
+# android
+export ANDROID_HOME='~/Library/Android/sdk'
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH"
