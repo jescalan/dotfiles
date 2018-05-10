@@ -1,5 +1,4 @@
 # dependencies
-source ~/.git-completion.sh
 source ~/.git-prompt.sh
 eval "$(hub alias -s)"
 
